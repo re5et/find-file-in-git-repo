@@ -19,7 +19,8 @@
      (concat repo
              (ido-completing-read
               "find in git repo: "
-              (split-string files "\n"))))))
+              (remove-if (lambda (x) (string= "" x))
+              (split-string files "\n")))))))
 
 (defun find-git-repo (dir)
   (if (string= "/" dir)
