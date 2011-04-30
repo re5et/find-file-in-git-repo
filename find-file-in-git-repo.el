@@ -4,7 +4,7 @@
 
 ;; Author: atom smith
 ;; URL: http://github.com/re5et/find-file-in-git-repo
-;; Version: 0.1.1
+;; Version: 0.1.2
 
 ;;; Commentary:
 
