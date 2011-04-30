@@ -5,7 +5,6 @@
 ;; Author: atom smith
 ;; URL: http://github.com/re5et/find-file-in-git-repo
 ;; Version: 0.1.0
-;; Package-Requires: ((ido ""))
 
 ;;; Commentary:
 
