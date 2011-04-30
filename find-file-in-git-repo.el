@@ -30,3 +30,5 @@
       (find-git-repo (expand-file-name "../" dir)))))
 
 ;;; find-file-in-git-repo.el ends here
+
+(provide 'find-file-in-git-repo)
