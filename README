@@ -1,3 +1,9 @@
 This provides a simple way to find any file in the git repo you are currently working in using ido-mode.  To use this you have to have git installed and when you run 'find-file-in-git-repo', default-directory must be either a git repo or a directory nested in the git repo.
 
+This is in marmalade so you can install it with elpa or package.el by:
+
+  package-install find-file-in-git-repo
+
+assuming of course, you have package.el / elpa setup with marmalade.
+
 I am newish to Emacs Lisp, so if you have any ideas for improvements, please fork and submit a pull request if you are so inclined.
