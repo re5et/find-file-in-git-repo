@@ -1,0 +1,3 @@
+This provides a simple way to find any file in the git repo you are currently working in using ido-mode.  To use this you have to have git installed and when you run 'find-file-in-git-repo', default-directory must be either a git repo or a directory nested in the git repo.
+
+I am newish to Emacs Lisp, so if you have any ideas for improvements, please fork and submit a pull request if you are so inclined.
