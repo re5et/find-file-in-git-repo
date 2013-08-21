@@ -11,6 +11,7 @@
 ;; Using default-directory searches upward for a .git repo directory,
 ;; then, feeds files into ido-completing-read using git ls-files.
 
+;;;###autoload
 (defun find-file-in-git-repo ()
   (interactive)
   (let* ((repo (find-git-repo default-directory))
