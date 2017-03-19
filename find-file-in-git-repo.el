@@ -29,7 +29,7 @@
 (defun find-git-repo (dir)
   (if (string= "/" dir)
       (message "not in a git repo.")
-    (if (file-exists-p (expand-file-name ".git/" dir))
+    (if (file-exists-p (expand-file-name ".git" dir))
         dir
       (find-git-repo (expand-file-name "../" dir)))))
 
