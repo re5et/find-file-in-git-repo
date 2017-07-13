@@ -15,9 +15,10 @@
 (defun find-file-in-git-repo ()
   (interactive)
   (let* ((repo (find-git-repo default-directory))
-         (local-repo (if (tramp-tramp-file-p repo)
-                         (tramp-file-name-localname (tramp-dissect-file-name repo))
-                       repo))
+         (local-repo 
+          (if (and (fboundp 'tramp-tramp-file-p) (tramp-tramp-file-p repo))
+                   (tramp-file-name-localname (tramp-dissect-file-name repo))
+            repo))
          (files (shell-command-to-string (format "cd %s && git ls-files" local-repo))))
     (find-file
      (concat repo
