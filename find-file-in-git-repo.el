@@ -30,9 +30,14 @@
 (defun find-git-repo (dir)
   (if (string= "/" dir)
       (message "not in a git repo.")
-    (if (file-exists-p (expand-file-name ".git" dir))
-        dir
-      (find-git-repo (expand-file-name "../" dir)))))
+    (let ((dotgit (expand-file-name ".git" dir)))
+      (if (or (file-exists-p (concat dotgit "/"))
+              ;; Handle .git files in git worktree directories
+              (and (file-readable-p dotgit)
+                   (with-temp-buffer (insert-file-contents dotgit)
+                                     (looking-at "gitdir: "))))
+          dir
+        (find-git-repo (expand-file-name "../" dir))))))
 
 ;;; find-file-in-git-repo.el ends here
 
