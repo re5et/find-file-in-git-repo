@@ -11,6 +11,8 @@
 ;; Using default-directory searches upward for a .git repo directory,
 ;; then, feeds files into ido-completing-read using git ls-files.
 
+(require 'cl-lib)
+
 ;;;###autoload
 (defun find-file-in-git-repo ()
   (interactive)
@@ -24,7 +26,7 @@
      (concat repo
              (ido-completing-read
               "find in git repo: "
-              (remove-if (lambda (x) (string= "" x))
+              (cl-remove-if (lambda (x) (string= "" x))
               (split-string files "\n")))))))
 
 (defun find-git-repo (dir)
